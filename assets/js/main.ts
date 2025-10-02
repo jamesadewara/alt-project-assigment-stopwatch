@@ -9,7 +9,7 @@ interface Lap {
 class CounterApp {
     currentCountEventListener: "start" | "stop" | "reset" = "stop";
     lapData: Lap[] = [];
-    overallTime: [number, number, number, number] = [0, 0, 0, 0]; // hour, minute, seconds, cs
+    overallTime: [number, number, number, number] = [0, 0, 0, 0]; // hour, minute, seconds, milliseconds
     lapTime: [number, number, number, number] = [0, 0, 0, 0];
 
     private themeMode: ThemeMode;
@@ -62,8 +62,8 @@ class CounterApp {
     }
 
     private formatTime(time: [number, number, number, number]): string {
-        const [h, m, s, cs] = time;
-        return `${this.padTime(h)}:${this.padTime(m)}:${this.padTime(s)}.${this.padTime(Math.ceil(cs))}`;
+        const [h, m, s, ms] = time;
+        return `${this.padTime(h)}:${this.padTime(m)}:${this.padTime(s)}.${this.padTime(Math.floor(ms), 3)}`;
     }
 
     private updateButtonVisibility() {
@@ -128,13 +128,13 @@ class CounterApp {
         }
     }
 
-    private incrementTime(time: [number, number, number, number], centiToAdd: number): [number, number, number, number] {
-        let [h, m, s, cs] = time;
-        cs += centiToAdd;
+    private incrementTime(time: [number, number, number, number], msToAdd: number): [number, number, number, number] {
+        let [h, m, s, ms] = time;
+        ms += msToAdd;
 
-        if (cs >= 100) {
-            s += Math.floor(cs / 100);
-            cs %= 100;
+        if (ms >= 1000) {
+            s += Math.floor(ms / 1000);
+            ms %= 1000;
         }
         if (s >= 60) {
             m += Math.floor(s / 60);
@@ -145,7 +145,7 @@ class CounterApp {
             m %= 60;
         }
 
-        return [h, m, s, cs];
+        return [h, m, s, ms];
     }
 
     startCount() {
@@ -158,12 +158,11 @@ class CounterApp {
         this.timerId = window.setInterval(() => {
             const now = performance.now();
             const diffMs = now - lastTimestamp;
+
             lastTimestamp = now;
 
-            const diffCenti = diffMs / 10;
-
-            this.overallTime = this.incrementTime(this.overallTime, diffCenti);
-            this.lapTime = this.incrementTime(this.lapTime, diffCenti);
+            this.overallTime = this.incrementTime(this.overallTime, diffMs);
+            this.lapTime = this.incrementTime(this.lapTime, diffMs);
 
             this.updateUI();
             // shows the updated ui in real time
