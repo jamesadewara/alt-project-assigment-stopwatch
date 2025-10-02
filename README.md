@@ -1,4 +1,4 @@
-# Stopwatch App - ALTSCHOOL AFRICA Project Assignment
+# Stopwatch App, ALTSCHOOL AFRICA Project Assignment
 
 This project demonstrates my approach to building a stopwatch web application. It covers both the UI design and the underlying logic to create a fully functional stopwatch using HTML, TypeScript (compiled to JavaScript), and SCSS (compiled to CSS).
 
@@ -48,3 +48,4 @@ To get started with this project, follow these steps:
 Alternatively, you can view the live version of the project [here](https://jamesadewara.github.io/alt-project-assigment-stopwatch/).
 
 ---
+*`inspired by react vite and bootsrap project setup and code writings`*
