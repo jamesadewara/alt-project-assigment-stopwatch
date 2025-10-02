@@ -93,6 +93,19 @@ img {
   border-radius: 50%;
 }
 
+footer {
+  height: 48px;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+}
+footer marquee {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
 @media (max-width: 468px) {
   section > div {
     background-color: transparent;
@@ -104,6 +117,7 @@ img {
   padding-left: 24px;
   padding-right: 24px;
   background-color: var(--color-header-background);
+  position: sticky;
 }
 .navbar nav {
   width: 100%;
