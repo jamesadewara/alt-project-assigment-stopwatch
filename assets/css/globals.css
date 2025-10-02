@@ -1,0 +1,199 @@
+/* This Represents Dark mode theme */
+:root {
+  --color-primary: #9b59b6;
+  --color-primary-variant: #6c3483;
+  --color-background: #121212;
+  --color-surface: #1e1e1e;
+  --color-header-background: #1a1a1a;
+  --color-text: #ffffff;
+  --color-text-secondary: #cfcfcf;
+  --color-error: red;
+  --color-error-secondary: #8f0303;
+  --color-success: green;
+  --color-success-secondary: #005000;
+  --border-radius: 8px;
+}
+
+/** This repr. light mode theme **/
+body.light-mode {
+  --color-primary: #6a0dad;
+  --color-primary-variant: #460046;
+  --color-background: #f9f9f9;
+  --color-surface: #ffffff;
+  --color-header-background: #f1f1f1;
+  --color-text: #121212;
+  --color-text-secondary: #555555;
+}
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+
+/** 
+  To ensure the navbar adapts properly across all browsers and screen sizes, 
+  I used dynamic viewport units (vw and vh) for width and height, allowing it to adjust 
+  seamlessly to both standard and smaller viewport dimensions.
+ */
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background: var(--color-background);
+  color: var(--color-text);
+  width: 100dvw;
+  height: 100dvh;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+section > div {
+  background-color: var(--color-surface);
+  border-radius: var(--border-radius);
+  padding: 16px;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+table thead th {
+  padding: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+table thead tr {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  border-radius: var(--border-radius);
+}
+table tbody tr {
+  border-bottom: 0.3px solid var(--color-text-secondary);
+}
+table tbody td {
+  padding: 8px;
+  font-size: 0.8rem;
+  color: var(--color-text);
+}
+
+img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.navbar {
+  height: 64px;
+  padding: 8px;
+  padding-left: 24px;
+  padding-right: 24px;
+  background-color: var(--color-header-background);
+}
+.navbar nav {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar nav img {
+  transition: 0.1s ease;
+}
+.navbar nav img:hover {
+  transform: scale(1.1);
+}
+.navbar nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.navbar nav ul li {
+  list-style: none;
+}
+.navbar nav ul li a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  user-select: none;
+  cursor: pointer;
+}
+.navbar nav ul li a:hover {
+  color: var(--color-primary);
+  font-weight: bolder;
+}
+
+.btn {
+  max-width: 320px;
+  max-height: 52px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: white;
+  border: 0px;
+  border-radius: var(--border-radius);
+  outline: none;
+  background: linear-gradient(to left, var(--color-primary), var(--color-primary-variant));
+  transition: 0.3s ease-in-out;
+}
+.btn:hover {
+  fill-opacity: 70%;
+}
+.btn:active {
+  transform: scale(0.9);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+}
+
+select option {
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+#overall-time,
+#lap-time {
+  margin: 0;
+  text-align: center;
+}
+
+#overall-time {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+#lap-time {
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+}
+
+.bottom-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.dark-gradient {
+  background-image: linear-gradient(to left, black, #1a1a1a);
+}
+
+.success-gradient {
+  background-image: linear-gradient(to left, var(--color-success), var(--color-success-secondary));
+}
+
+.error-gradient {
+  background-image: linear-gradient(to left, var(--color-error), var(--color-error-secondary));
+}
+
+/*# sourceMappingURL=globals.css.map */

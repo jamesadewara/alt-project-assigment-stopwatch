@@ -1,0 +1,106 @@
+/* This Represents Dark mode theme */
+:root {
+    --color-primary: #9b59b6;
+    --color-primary-variant: #6c3483;
+    
+    --color-background: #121212;
+    --color-surface: #1e1e1e;
+    --color-header-background: #1a1a1a;
+
+    --color-text: #ffffff;
+    --color-text-secondary: #cfcfcf;
+
+    --color-error: red;
+    --color-error-secondary: #8f0303;
+
+    --color-success: green;
+    --color-success-secondary: #005000;
+
+    --border-radius: 8px;
+}
+
+/** This repr. light mode theme **/
+body.light-mode {
+    --color-primary: #6a0dad;
+    --color-primary-variant: #460046;
+
+    --color-background: #f9f9f9;
+    --color-surface: #ffffff;
+    --color-header-background: #f1f1f1;
+
+    --color-text: #121212;
+    --color-text-secondary: #555555;
+}
+
+
+html, body{
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+/** 
+  To ensure the navbar adapts properly across all browsers and screen sizes, 
+  I used dynamic viewport units (vw and vh) for width and height, allowing it to adjust 
+  seamlessly to both standard and smaller viewport dimensions.
+ */
+body{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: var(--color-background);
+    color: var(--color-text);
+    width: 100dvw;
+    height: 100dvh;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+section > div{
+    background-color: var(--color-surface);
+    border-radius: var(--border-radius);
+    padding: 16px;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+
+    thead th {
+      padding: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    thead tr{
+        background-color: var(--color-background);
+        color: var(--color-text);
+        border-radius: var(--border-radius);
+    }
+
+    tbody tr{
+        border-bottom: 0.3px solid var(--color-text-secondary);
+    }
+
+    tbody td{
+        padding: 8px;
+        font-size: 0.8rem;
+        color: var(--color-text);
+    }
+}
+
+img{
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stopwatch App Project Assignment</title>
+  <link rel="icon" href="assets/img/profile.png" />
+  <link rel="stylesheet" href="assets/css/globals.css" />
+</head>
+
+<body>
+  <header class="navbar">
+    <nav>
+      <img src="assets/img/profile.png" alt="James Profile Picture" />
+      <ul>
+        <li><a href="#">James Adewara</a></li>
+      </ul>
+      <!--This `Select` option makes it easier to change the theme mode to either `system` `light` or `dark`.-->
+      <select class="btn" id="theme-select" style="color: white">
+        <option value="system">System Default</option>
+        <option value="light">Light Mode</option>
+        <option value="dark">Dark Mode</option>
+      </select>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <div>
+        <div>
+        <!--These -->
+          <h3 id="overall-time"></h3>
+          <h6 id="lap-time"></h6>
+        </div>
+
+        <div>
+          <table id="lap-table">
+            <thead>
+              <tr>
+                <th>Lap</th>
+                <th>Lap Time</th>
+                <th>Overall Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>01</td>
+                <td>00:00:12.23</td>
+                <td>00:00:12.73</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="bottom-container">
+          <button id="start-btn" class="btn">Start</button>
+          <button id="stop-btn" class="error-gradient btn">Stop</button>
+          <button id="lap-btn" class="btn dark-gradient">Lap</button>
+          <button id="reset-btn" class="btn success-gradient">Reset</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/main.js" type="module"></script>
+</body>
+
+</html>
