@@ -93,6 +93,11 @@ img {
   border-radius: 50%;
 }
 
+@media (max-width: 468px) {
+  section > div {
+    background-color: transparent;
+  }
+}
 .navbar {
   height: 64px;
   padding: 8px;

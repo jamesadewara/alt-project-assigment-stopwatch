@@ -104,3 +104,9 @@ img{
     object-fit: cover;
     border-radius: 50%;
 }
+
+@media (max-width:468px){
+    section > div{
+        background-color: transparent;
+    }
+}
